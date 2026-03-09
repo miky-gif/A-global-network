@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [language, setLanguage] = useState('EN');
     const location = useLocation();
+
+    const toggleLanguage = () => {
+        setLanguage(prev => prev === 'EN' ? 'FR' : 'EN');
+    };
 
     // Handle scroll effect
     useEffect(() => {
@@ -76,6 +81,10 @@ const Navbar = () => {
 
                         {/* Right Actions */}
                         <div className="nav-actions">
+                            <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle Language">
+                                <FaGlobe size={18} />
+                                <span>{language}</span>
+                            </button>
                             <Link to="/contact" className="btn nav-btn">
                                 Contact
                             </Link>
@@ -95,12 +104,19 @@ const Navbar = () => {
                 <div className="mobile-content">
                     <div className="mobile-header">
                         <img src="/images/logo.png" alt="Impact Horizon Africa" className="mobile-logo-img" />
-                        <button 
-                            onClick={() => setMobileMenuOpen(false)}
-                            aria-label="Close Menu"
-                        >
-                            <FaTimes size={24} />
-                        </button>
+                        <div className="mobile-header-actions">
+                            <button className="lang-toggle mobile-lang-toggle" onClick={toggleLanguage}>
+                                <FaGlobe size={20} />
+                                <span>{language}</span>
+                            </button>
+                            <button 
+                                onClick={() => setMobileMenuOpen(false)}
+                                aria-label="Close Menu"
+                                className="close-menu-btn"
+                            >
+                                <FaTimes size={26} />
+                            </button>
+                        </div>
                     </div>
                     
                     <div className="mobile-links">
