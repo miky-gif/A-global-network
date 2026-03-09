@@ -1,0 +1,149 @@
+/* ═══════════════════════════════════════
+   NETWORK PAGE — Clean Minimal
+   ═══════════════════════════════════════ */
+
+/* Intro Grid */
+.network-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.network-intro-image {
+    position: relative;
+}
+
+.network-intro-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    position: relative;
+    z-index: 2;
+}
+
+.network-image-backdrop {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-subtle);
+    border-radius: var(--radius);
+    z-index: 1;
+}
+
+/* Regions Grid */
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.region-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.region-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+}
+
+.region-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--light);
+}
+
+.region-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.region-card:hover .region-card-image img {
+    transform: scale(1.04);
+}
+
+.region-card-body {
+    padding: 1.5rem;
+}
+
+.region-card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.region-card-body p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Stats */
+.network-stats {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    text-align: center;
+}
+
+.network-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.network-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.network-stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+@media (max-width: 968px) {
+    .network-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .network-image-backdrop {
+        display: none;
+    }
+
+    .regions-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .network-stats {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .network-stats {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+}

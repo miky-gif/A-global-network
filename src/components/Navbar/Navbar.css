@@ -1,0 +1,243 @@
+/* ─── NAVBAR — Clean Minimal ─── */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeInDown 0.5s var(--ease) both;
+}
+
+.navbar {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    padding: 0 4%;
+}
+
+.main-header.scrolled .navbar {
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.main-header.scrolled .logo-img {
+    height: 38px;
+}
+
+.nav-menu {
+    display: none;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .nav-menu { display: flex; }
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    padding: 0.4rem 0;
+    position: relative;
+    letter-spacing: 0.01em;
+    transition: var(--transition);
+}
+
+.main-header.scrolled .nav-link {
+    color: var(--text-secondary);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+}
+
+.main-header.scrolled .nav-link:hover,
+.main-header.scrolled .nav-link.active {
+    color: var(--primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 1px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-btn {
+    padding: 0.55rem 1.4rem;
+    font-size: 0.82rem;
+    background: var(--primary) !important;
+    color: var(--white) !important;
+}
+
+.nav-btn:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-1px);
+}
+
+.mobile-toggle {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.main-header.scrolled .mobile-toggle {
+    color: var(--text);
+}
+
+@media (min-width: 1024px) {
+    .mobile-toggle { display: none; }
+}
+
+@media (max-width: 1023px) {
+    .nav-btn { display: none; }
+}
+
+/* ─── MOBILE MENU ─── */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobile-content {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+}
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.mobile-logo-img {
+    height: 36px;
+    width: auto;
+}
+
+.mobile-header button {
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    flex-grow: 1;
+}
+
+.mobile-links a {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-links a::after {
+    content: '→';
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition);
+    color: var(--primary);
+}
+
+.mobile-links a:hover,
+.mobile-links a.active {
+    color: var(--primary);
+    padding-left: 0.5rem;
+}
+
+.mobile-links a:hover::after,
+.mobile-links a.active::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-links .btn-primary {
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    justify-content: center;
+}
+
+.mobile-links .btn-primary::after {
+    display: none;
+}
+
+.mobile-footer-info {
+    margin-top: auto;
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+
+.mobile-footer-info p {
+    margin-bottom: 0.25rem;
+}

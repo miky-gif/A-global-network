@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════
+   HOW WE WORK — Clean Minimal
+   ═══════════════════════════════════════ */
+
+/* Steps Grid */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.step-card {
+    padding: 2.5rem 1.5rem;
+    background: var(--white);
+    transition: var(--transition);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+}
+
+.step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    opacity: 0.15;
+    display: block;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Image band */
+.hww-image-band {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hww-image-band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Assurance Grid */
+.assurance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.assurance-card {
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.assurance-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.assurance-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+}
+
+.assurance-text h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.assurance-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .assurance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hww-image-band {
+        height: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
