@@ -127,6 +127,23 @@
 
 
 
+/* Touch 1 — Kente-inspired frise at hero bottom */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    z-index: 20;
+    background: repeating-linear-gradient(90deg,
+        var(--accent-gold) 0 12px,
+        var(--primary) 12px 24px,
+        var(--accent-green-africa) 24px 36px,
+        var(--accent-terracotta) 36px 48px
+    );
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero { 

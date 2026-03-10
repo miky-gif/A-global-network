@@ -7,6 +7,11 @@
   --primary-subtle: rgba(36, 84, 204, 0.06);
   --primary-muted: rgba(36, 84, 204, 0.12);
 
+  --accent-gold: #C6963C;
+  --accent-gold-subtle: rgba(198, 150, 60, 0.08);
+  --accent-terracotta: #A0522D;
+  --accent-green-africa: #1a6b3c;
+
   --dark: #111827;
   --dark-soft: #1e293b;
   --light: #f8f9fb;
@@ -154,6 +159,22 @@ button {
   font-weight: 600;
   font-size: 0.7rem;
   margin-bottom: 0.75rem;
+}
+
+/* Touch 4 — African decorative line under subtitles */
+.section-subtitle::after {
+  content: '';
+  display: block;
+  margin-top: 0.45rem;
+  width: 36px;
+  height: 3px;
+  background: repeating-linear-gradient(90deg,
+    var(--accent-gold) 0 5px,
+    transparent 5px 7px,
+    var(--primary) 7px 12px,
+    transparent 12px 14px
+  );
+  border-radius: 2px;
 }
 
 /* ─── BACKGROUNDS ─── */

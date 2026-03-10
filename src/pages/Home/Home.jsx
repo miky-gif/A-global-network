@@ -123,6 +123,27 @@ const Home = () => {
         }
     ];
 
+    const testimonials = [
+        {
+            quote: "Impact Horizon Africa brought exceptional strategic clarity to our regional infrastructure planning. Their ability to bridge global standards with deep local context is unmatched.",
+            author: "Dr. Amina Oumar",
+            role: "Director, Regional Development Bank",
+            image: "/images/eqp1.jpeg"
+        },
+        {
+            quote: "A truly responsive and highly skilled network. They mobilized a multidisciplinary team within 48 hours to help us navigate a complex regulatory environment.",
+            author: "Jean-Paul Kagame",
+            role: "Program Header, International NGO",
+            image: "/images/eqp2.jpeg"
+        },
+        {
+            quote: "The rigor of their analytical work transformed our approach to digital governance scaling across West Africa. They are the benchmark for premium consulting.",
+            author: "Sarah Mensah",
+            role: "Chief Strategy Officer, TechAfrica",
+            image: "/images/eqp3.jpeg"
+        }
+    ];
+
     return (
         <div className="home-page">
             <Hero />
@@ -146,6 +167,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <div className="african-divider" aria-hidden="true"></div>
 
             {/* ABOUT SECTION */}
             <section className="home-about-section section-padding">
@@ -198,11 +221,17 @@ const Home = () => {
                 </div>
             </section>
 
+            <div className="african-divider on-light" aria-hidden="true"></div>
+
             {/* WHY CHOOSE US */}
             <section className="home-why-section section-padding">
                 <div className="container home-why-grid">
                     <div className="why-image-wrapper reveal-left">
                         <img src="/images/Why Us.jpg" alt="Professional collaboration" />
+                        <div className="why-floating-badge">
+                            <span className="badge-number">150+</span>
+                            <span className="badge-text">Pan-African<br />Experts</span>
+                        </div>
                     </div>
                     <div className="home-why-content reveal-right">
                         <span className="section-subtitle">Why Us</span>
@@ -211,13 +240,74 @@ const Home = () => {
                         <div className="feature-list">
                             {whyUsFeatures.map((feature, index) => (
                                 <div key={index} className="feature-item">
-                                    <div className="feature-num">{feature.id}</div>
+                                    <div className="feature-num-box">
+                                        {feature.id}
+                                    </div>
                                     <div className="feature-text">
                                         <h4>{feature.title}</h4>
                                         <p className="text-muted">{feature.desc}</p>
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* TESTIMONIALS */}
+            <section className="testimonials-section section-padding bg-light">
+                <div className="container">
+                    <div className="text-center mb-4 reveal">
+                        <span className="section-subtitle">Testimonials</span>
+                        <h2>Trusted by Leaders</h2>
+                        <p className="text-muted expertise-intro">What our partners say about the impact of our network.</p>
+                    </div>
+
+                    <div className="testimonials-grid">
+                        {testimonials.map((testi, index) => (
+                            <div key={index} className={`testimonial-card reveal delay-${index + 1}`}>
+                                <div className="quote-mark">"</div>
+                                <p className="testimonial-quote">{testi.quote}</p>
+                                <div className="testimonial-author-box">
+                                    <img src={testi.image} alt={testi.author} className="author-avatar" loading="lazy" />
+                                    <div className="author-details">
+                                        <h4>{testi.author}</h4>
+                                        <p>{testi.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <div className="african-divider on-light" aria-hidden="true"></div>
+
+            {/* OUR NETWORK SECTION */}
+            <section className="home-network-section">
+                <div className="network-bg-image" style={{ backgroundImage: "url('/images/image de fond.jpg')" }}></div>
+                <div className="network-gradient-top"></div>
+                <div className="network-overlay"></div>
+
+                <div className="container network-content">
+                    <div className="network-grid">
+                        <div className="network-text reveal-left">
+                            <span className="section-subtitle text-white">Our Network & Geographic Presence</span>
+                            <h2>A pan-African network, built for scale and impact</h2>
+                            <div className="network-desc">
+                                <p>
+                                    Impact Horizon Africa is built on a strong pan-African network of multidisciplinary experts, enabling rapid deployment and deep contextual understanding across diverse African environments.
+                                </p>
+                                <p>
+                                    Our model combines local presence with centralized coordination, ensuring efficiency, consistency and compliance across all projects.
+                                </p>
+                                <p>
+                                    With experts embedded across the continent, we operate where impact happens on the ground.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="network-map-wrapper reveal-right">
+                            <img src="/images/afrique.png" alt="Africa Map" className="africa-map-img" loading="lazy" />
                         </div>
                     </div>
                 </div>

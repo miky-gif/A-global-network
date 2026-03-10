@@ -37,6 +37,7 @@
     width: auto;
     display: block;
     transition: var(--transition);
+    border-radius: 8px;
 }
 
 .main-header.scrolled .logo-img {
@@ -188,6 +189,7 @@
 .mobile-logo-img {
     height: 36px;
     width: auto;
+    border-radius: 6px;
 }
 
 .mobile-header-actions {

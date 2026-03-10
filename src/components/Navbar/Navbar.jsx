@@ -58,7 +58,7 @@ const Navbar = () => {
                         <div className="nav-brand">
                             <Link to="/">
                                 <img 
-                                    src="/images/logo.png" 
+                                    src={scrolled ? "/images/logo.png" : "/images/logo1.png"} 
                                     alt="Impact Horizon Africa" 
                                     className="logo-img"
                                 />
