@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import Hero from '../../components/Hero/Hero';
+import { useLanguage } from '../../context/LanguageContext';
 import './Home.css';
 
-// Custom hook to trigger reveal animations on scroll
 const useScrollReveal = () => {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -71,36 +71,37 @@ const AnimatedCounter = ({ end, duration = 2500, suffix = "" }) => {
 
 const Home = () => {
     useScrollReveal();
+    const { t } = useLanguage();
 
     const expertiseAreas = [
         {
             id: "01",
-            title: "Strategic Intelligence",
-            desc: "Evidence-based research and sectoral diagnostics to inform high-level decision making.",
+            title: t('home.expertise.areas.1.title'),
+            desc: t('home.expertise.areas.1.desc'),
             icon: "/images/Strategic Intelligence.jpg" // placeholder
         },
         {
             id: "02",
-            title: "Digital Governance",
-            desc: "Modernizing institutional frameworks through data architecture and analytics.",
+            title: t('home.expertise.areas.2.title'),
+            desc: t('home.expertise.areas.2.desc'),
             icon: "/images/digital.jpg" // placeholder
         },
         {
             id: "03",
-            title: "Social Marketing",
-            desc: "Driving behavioral change through community engagement and advocacy.",
+            title: t('home.expertise.areas.3.title'),
+            desc: t('home.expertise.areas.3.desc'),
             icon: "/images/social.jpg" // placeholder
         },
         {
             id: "04",
-            title: "Climate & Infrastructure",
-            desc: "Sustainable infrastructure design and climate adaptation strategies.",
+            title: t('home.expertise.areas.4.title'),
+            desc: t('home.expertise.areas.4.desc'),
             icon: "/images/hero1.png" // placeholder
         },
         {
             id: "05",
-            title: "Human Development",
-            desc: "Empowering communities through capacity building and skills transfer.",
+            title: t('home.expertise.areas.5.title'),
+            desc: t('home.expertise.areas.5.desc'),
             icon: "/images/hero2.png" // placeholder
         }
     ];
@@ -108,38 +109,38 @@ const Home = () => {
     const whyUsFeatures = [
         {
             id: "01",
-            title: "End-to-end Project Mastery",
-            desc: "We support the full project lifecycle from strategic design to impact reporting, leaving no gap between theory and field."
+            title: t('home.whyUs.features.1.title'),
+            desc: t('home.whyUs.features.1.desc')
         },
         {
             id: "02",
-            title: "Pan-African Network",
-            desc: "Access to 150+ operational experts across the continent, allowing for rapid mobilization and deep local anchorage."
+            title: t('home.whyUs.features.2.title'),
+            desc: t('home.whyUs.features.2.desc')
         },
         {
             id: "03",
-            title: "Global Standards, Local Focus",
-            desc: "We align strictly with international donor expectations while perfectly understanding African institutional realities."
+            title: t('home.whyUs.features.3.title'),
+            desc: t('home.whyUs.features.3.desc')
         }
     ];
 
     const testimonials = [
         {
-            quote: "Impact Horizon Africa brought exceptional strategic clarity to our regional infrastructure planning. Their ability to bridge global standards with deep local context is unmatched.",
-            author: "Dr. Amina Oumar",
-            role: "Director, Regional Development Bank",
+            quote: t('home.testimonials.1.quote'),
+            author: t('home.testimonials.1.author'),
+            role: t('home.testimonials.1.role'),
             image: "/images/eqp1.jpeg"
         },
         {
-            quote: "A truly responsive and highly skilled network. They mobilized a multidisciplinary team within 48 hours to help us navigate a complex regulatory environment.",
-            author: "Jean-Paul Kagame",
-            role: "Program Header, International NGO",
+            quote: t('home.testimonials.2.quote'),
+            author: t('home.testimonials.2.author'),
+            role: t('home.testimonials.2.role'),
             image: "/images/eqp2.jpeg"
         },
         {
-            quote: "The rigor of their analytical work transformed our approach to digital governance scaling across West Africa. They are the benchmark for premium consulting.",
-            author: "Sarah Mensah",
-            role: "Chief Strategy Officer, TechAfrica",
+            quote: t('home.testimonials.3.quote'),
+            author: t('home.testimonials.3.author'),
+            role: t('home.testimonials.3.role'),
             image: "/images/eqp3.jpeg"
         }
     ];
@@ -153,17 +154,17 @@ const Home = () => {
                 <div className="container stats-grid">
                     <div className="stat-item reveal delay-1">
                         <span className="stat-number"><AnimatedCounter end={150} suffix="+" /></span>
-                        <span className="stat-desc">Specialized Experts</span>
+                        <span className="stat-desc">{t('home.stats.experts')}</span>
                     </div>
                     <div className="stat-divider reveal delay-2"></div>
                     <div className="stat-item reveal delay-3">
                         <span className="stat-number"><AnimatedCounter end={15} suffix="+" /></span>
-                        <span className="stat-desc">Countries Covered</span>
+                        <span className="stat-desc">{t('home.stats.countries')}</span>
                     </div>
                     <div className="stat-divider reveal delay-4"></div>
                     <div className="stat-item reveal delay-5">
                         <span className="stat-number"><AnimatedCounter end={48} suffix="h" /></span>
-                        <span className="stat-desc">Mobilization Lead Time</span>
+                        <span className="stat-desc">{t('home.stats.mobilization')}</span>
                     </div>
                 </div>
             </section>
@@ -174,15 +175,15 @@ const Home = () => {
             <section className="home-about-section section-padding">
                 <div className="container home-about-grid">
                     <div className="home-about-text reveal-left">
-                        <span className="section-subtitle">About Us</span>
-                        <h2>A global network, built for impact in Africa</h2>
+                        <span className="section-subtitle">{t('home.about.subtitle')}</span>
+                        <h2>{t('home.about.title')}</h2>
                         <p className="text-muted mb-4">
-                            Impact Horizon Africa is a premier pan-African platform bringing together a global network of experts dedicated to the design, capture and execution of high-impact development projects.
+                            {t('home.about.p1')}
                         </p>
                         <p className="text-muted mb-4">
-                            We operate at the intersection of international standards and local institutional realities, ensuring that projects are effectively delivered and socially anchored.
+                            {t('home.about.p2')}
                         </p>
-                        <Link to="/about" className="btn btn-outline mt-2">Discover Our Story</Link>
+                        <Link to="/about" className="btn btn-outline mt-2">{t('home.about.btn')}</Link>
                     </div>
                     <div className="about-image-wrapper reveal-right">
                         <img src="/images/a propos acuueil.jpg" alt="Development landscape" />
@@ -195,9 +196,9 @@ const Home = () => {
             <section className="expertise-section section-padding bg-light">
                 <div className="container">
                     <div className="text-center mb-4 reveal">
-                        <span className="section-subtitle">Core Pillars</span>
-                        <h2>Our Expertise Matrix</h2>
-                        <p className="text-muted expertise-intro">Integrated solutions designed to navigate complexity and deliver sustainable development outcomes.</p>
+                        <span className="section-subtitle">{t('home.expertise.subtitle')}</span>
+                        <h2>{t('home.expertise.title')}</h2>
+                        <p className="text-muted expertise-intro">{t('home.expertise.intro')}</p>
                     </div>
 
                     <div className="expertise-grid">
@@ -210,13 +211,13 @@ const Home = () => {
                                     <span className="card-num">{area.id}</span>
                                     <h3>{area.title}</h3>
                                     <p>{area.desc}</p>
-                                    <span className="card-link">Learn More <FaArrowRight /></span>
+                                    <span className="card-link">{t('home.expertise.learnMore')} <FaArrowRight /></span>
                                 </div>
                             </Link>
                         ))}
                     </div>
                     <div className="text-center mt-4 reveal">
-                        <Link to="/expertise" className="btn btn-outline">View All Practice Areas</Link>
+                        <Link to="/expertise" className="btn btn-outline">{t('home.expertise.viewAll')}</Link>
                     </div>
                 </div>
             </section>
@@ -229,13 +230,13 @@ const Home = () => {
                     <div className="why-image-wrapper reveal-left">
                         <img src="/images/Why Us.jpg" alt="Professional collaboration" />
                         <div className="why-floating-badge">
-                            <span className="badge-number">150+</span>
-                            <span className="badge-text">Pan-African<br />Experts</span>
+                            <span className="badge-number">{t('home.whyUs.badgeNumber')}</span>
+                            <span className="badge-text" dangerouslySetInnerHTML={{ __html: t('home.whyUs.badgeText') }}></span>
                         </div>
                     </div>
                     <div className="home-why-content reveal-right">
-                        <span className="section-subtitle">Why Us</span>
-                        <h2>Bridging the gap between theory and field</h2>
+                        <span className="section-subtitle">{t('home.whyUs.subtitle')}</span>
+                        <h2>{t('home.whyUs.title')}</h2>
 
                         <div className="feature-list">
                             {whyUsFeatures.map((feature, index) => (
@@ -258,9 +259,9 @@ const Home = () => {
             <section className="testimonials-section section-padding bg-light">
                 <div className="container">
                     <div className="text-center mb-4 reveal">
-                        <span className="section-subtitle">Testimonials</span>
-                        <h2>Trusted by Leaders</h2>
-                        <p className="text-muted expertise-intro">What our partners say about the impact of our network.</p>
+                        <span className="section-subtitle">{t('home.testimonials.subtitle')}</span>
+                        <h2>{t('home.testimonials.title')}</h2>
+                        <p className="text-muted expertise-intro">{t('home.testimonials.intro')}</p>
                     </div>
 
                     <div className="testimonials-grid">
@@ -292,18 +293,12 @@ const Home = () => {
                 <div className="container network-content">
                     <div className="network-grid">
                         <div className="network-text reveal-left">
-                            <span className="section-subtitle text-white">Our Network & Geographic Presence</span>
-                            <h2>A pan-African network, built for scale and impact</h2>
+                            <span className="section-subtitle text-white">{t('home.network.subtitle')}</span>
+                            <h2>{t('home.network.title')}</h2>
                             <div className="network-desc">
-                                <p>
-                                    Impact Horizon Africa is built on a strong pan-African network of multidisciplinary experts, enabling rapid deployment and deep contextual understanding across diverse African environments.
-                                </p>
-                                <p>
-                                    Our model combines local presence with centralized coordination, ensuring efficiency, consistency and compliance across all projects.
-                                </p>
-                                <p>
-                                    With experts embedded across the continent, we operate where impact happens on the ground.
-                                </p>
+                                <p>{t('home.network.p1')}</p>
+                                <p>{t('home.network.p2')}</p>
+                                <p>{t('home.network.p3')}</p>
                             </div>
                         </div>
                         <div className="network-map-wrapper reveal-right">
@@ -317,12 +312,12 @@ const Home = () => {
             <section className="cta-section">
                 <div className="container">
                     <div className="cta-box reveal">
-                        <span className="section-subtitle text-white">Engage With Us</span>
-                        <h2>Ready to accelerate impact?</h2>
-                        <p>Partner with our high-level network of experts specialized in African development.</p>
+                        <span className="section-subtitle text-white">{t('home.cta.subtitle')}</span>
+                        <h2>{t('home.cta.title')}</h2>
+                        <p>{t('home.cta.desc')}</p>
                         <div className="cta-btns">
-                            <Link to="/contact" className="btn btn-primary">Start a Conversation</Link>
-                            <Link to="/expertise" className="btn btn-outline text-white border-white">Explore Services</Link>
+                            <Link to="/contact" className="btn btn-primary">{t('home.cta.btn1')}</Link>
+                            <Link to="/expertise" className="btn btn-outline text-white border-white">{t('home.cta.btn2')}</Link>
                         </div>
                     </div>
                 </div>

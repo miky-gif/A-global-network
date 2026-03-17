@@ -9,6 +9,7 @@ import Expertise from './pages/Expertise/Expertise';
 import HowWeWork from './pages/HowWeWork/HowWeWork';
 import Network from './pages/Network/Network';
 import Contact from './pages/Contact/Contact';
+import { LanguageProvider } from './context/LanguageContext';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -21,24 +22,26 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/expertise" element={<Expertise />} />
-            <Route path="/how-we-work" element={<HowWeWork />} />
-            <Route path="/network" element={<Network />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="app">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/expertise" element={<Expertise />} />
+              <Route path="/how-we-work" element={<HowWeWork />} />
+              <Route path="/network" element={<Network />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

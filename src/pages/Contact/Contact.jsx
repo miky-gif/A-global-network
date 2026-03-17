@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Contact.css';
 
 const Contact = () => {
+    const { t } = useLanguage();
     // Add simple scroll reveal
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -26,30 +28,30 @@ const Contact = () => {
             <section className="page-header">
                 <img src="/images/hero2.png" alt="" className="header-bg-image" />
                 <div className="container header-content">
-                    <span className="section-subtitle">Engagement</span>
-                    <h1 className="reveal">Get in Touch</h1>
-                    <p className="header-desc reveal delay-1">Connect with our global network of experts to design, deploy, and measure high-impact development projects.</p>
+                    <span className="section-subtitle">{t('contactPage.header.subtitle')}</span>
+                    <h1 className="reveal">{t('contactPage.header.title')}</h1>
+                    <p className="header-desc reveal delay-1">{t('contactPage.header.desc')}</p>
                 </div>
             </section>
 
             <section className="section-padding">
                 <div className="container contact-grid">
                     <div className="contact-info reveal-left">
-                        <span className="section-subtitle">Contact</span>
-                        <h2>Let's talk about impact</h2>
-                        <p className="text-muted mb-4">Ready to transform complex development challenges into measurable results? Our strategic team is available for high-level consultations.</p>
+                        <span className="section-subtitle">{t('contactPage.info.subtitle')}</span>
+                        <h2>{t('contactPage.info.title')}</h2>
+                        <p className="text-muted mb-4">{t('contactPage.info.desc')}</p>
 
                         <div className="contact-details">
                             <div className="contact-detail">
-                                <span className="detail-label">Headquarters</span>
-                                <span className="detail-value">Kigali, Rwanda</span>
+                                <span className="detail-label">{t('contactPage.info.hq')}</span>
+                                <span className="detail-value">{t('footer.location')}</span>
                             </div>
                             <div className="contact-detail">
-                                <span className="detail-label">Email</span>
+                                <span className="detail-label">{t('contactPage.info.email')}</span>
                                 <span className="detail-value"><a href="mailto:contact@impacthorizon.africa">contact@impacthorizon.africa</a></span>
                             </div>
                             <div className="contact-detail">
-                                <span className="detail-label">Phone</span>
+                                <span className="detail-label">{t('contactPage.info.phone')}</span>
                                 <span className="detail-value"><a href="tel:+32493983815">+32 493 98 38 15</a></span>
                             </div>
                         </div>
@@ -59,34 +61,34 @@ const Contact = () => {
                         <form className="contact-form">
                             <div className="form-row">
                                 <div className="form-group">
-                                    <label>Full Name</label>
-                                    <input type="text" placeholder="Jean Dupont" required />
+                                    <label>{t('contactPage.form.name')}</label>
+                                    <input type="text" placeholder={t('contactPage.form.namePh')} required />
                                 </div>
                                 <div className="form-group">
-                                    <label>Email</label>
-                                    <input type="email" placeholder="name@organization.com" required />
+                                    <label>{t('contactPage.form.email')}</label>
+                                    <input type="email" placeholder={t('contactPage.form.emailPh')} required />
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label>Organization</label>
-                                <input type="text" placeholder="Organization name" />
+                                <label>{t('contactPage.form.org')}</label>
+                                <input type="text" placeholder={t('contactPage.form.orgPh')} />
                             </div>
                             <div className="form-group">
-                                <label>Inquiry Type</label>
+                                <label>{t('contactPage.form.inquiry')}</label>
                                 <select required>
-                                    <option value="">Select an option</option>
-                                    <option value="partnership">Strategic Partnership</option>
-                                    <option value="expertise">Expertise & Services</option>
-                                    <option value="network">Join Our Network</option>
-                                    <option value="other">General Inquiry</option>
+                                    <option value="">{t('contactPage.form.options.default')}</option>
+                                    <option value="partnership">{t('contactPage.form.options.partnership')}</option>
+                                    <option value="expertise">{t('contactPage.form.options.expertise')}</option>
+                                    <option value="network">{t('contactPage.form.options.network')}</option>
+                                    <option value="other">{t('contactPage.form.options.other')}</option>
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label>Message</label>
-                                <textarea rows="5" placeholder="Briefly describe your project or needs..." required></textarea>
+                                <label>{t('contactPage.form.message')}</label>
+                                <textarea rows="5" placeholder={t('contactPage.form.messagePh')} required></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary btn-full">
-                                Send Message <FaArrowRight />
+                                {t('contactPage.form.submit')} <FaArrowRight />
                             </button>
                         </form>
                     </div>

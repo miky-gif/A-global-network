@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import './HowWeWork.css';
 
 const HowWeWork = () => {
+    const { t } = useLanguage();
     // Add simple scroll reveal
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -23,47 +25,47 @@ const HowWeWork = () => {
     const steps = [
         {
             num: "01",
-            title: "Diagnostic & Design",
-            desc: "Stakeholder mapping, institutional diagnostics, and baseline assessments to define the intervention logic."
+            title: t('howWeWorkPage.steps.1.title'),
+            desc: t('howWeWorkPage.steps.1.desc')
         },
         {
             num: "02",
-            title: "Strategic Structuring",
-            desc: "Aligning project design with donor priorities and local institutional frameworks."
+            title: t('howWeWorkPage.steps.2.title'),
+            desc: t('howWeWorkPage.steps.2.desc')
         },
         {
             num: "03",
-            title: "Tactical Deployment",
-            desc: "Rapid mobilization of expert networks and operational coordination in the field."
+            title: t('howWeWorkPage.steps.3.title'),
+            desc: t('howWeWorkPage.steps.3.desc')
         },
         {
             num: "04",
-            title: "Monitoring & MEL",
-            desc: "Continuous performance tracking via digital MEL systems and evidence-based adaptive management."
+            title: t('howWeWorkPage.steps.4.title'),
+            desc: t('howWeWorkPage.steps.4.desc')
         },
         {
             num: "05",
-            title: "Impact Proof & Reporting",
-            desc: "Formal impact measurement, donor-compliant reporting, and capitalisation of results."
+            title: t('howWeWorkPage.steps.5.title'),
+            desc: t('howWeWorkPage.steps.5.desc')
         }
     ];
 
     const assurances = [
         {
-            title: "Zero-Gap Implementation",
-            desc: "Our phased approach ensures no strategic detail is lost between design and field deployment."
+            title: t('howWeWorkPage.assurance.items.1.title'),
+            desc: t('howWeWorkPage.assurance.items.1.desc')
         },
         {
-            title: "Donor-Grade Compliance",
-            desc: "Integrated reporting tools that meet the highest international standards of accountability."
+            title: t('howWeWorkPage.assurance.items.2.title'),
+            desc: t('howWeWorkPage.assurance.items.2.desc')
         },
         {
-            title: "Adaptive Precision",
-            desc: "Real-time data loops that allow us to pivot and optimize project tactics based on field realities."
+            title: t('howWeWorkPage.assurance.items.3.title'),
+            desc: t('howWeWorkPage.assurance.items.3.desc')
         },
         {
-            title: "Sustainable Ownership",
-            desc: "Methodologies designed to transfer skills and ensure projects remain viable beyond our intervention."
+            title: t('howWeWorkPage.assurance.items.4.title'),
+            desc: t('howWeWorkPage.assurance.items.4.desc')
         }
     ];
 
@@ -72,9 +74,9 @@ const HowWeWork = () => {
             <section className="page-header">
                 <img src="/images/hero1.png" alt="" className="header-bg-image" />
                 <div className="container header-content">
-                    <span className="section-subtitle">Methodology</span>
-                    <h1 className="reveal">Our Impact Delivery Approach</h1>
-                    <p className="header-desc reveal delay-1">A structured, auditable, and results-driven methodology designed for complex development environments.</p>
+                    <span className="section-subtitle">{t('howWeWorkPage.header.subtitle')}</span>
+                    <h1 className="reveal">{t('howWeWorkPage.header.title')}</h1>
+                    <p className="header-desc reveal delay-1">{t('howWeWorkPage.header.desc')}</p>
                 </div>
             </section>
 
@@ -95,15 +97,15 @@ const HowWeWork = () => {
             <section className="hww-image-band">
                 <img src="/images/hero2.png" alt="Our process in action" />
                 <div className="fullwidth-overlay">
-                    <h2 className="reveal">Precision in execution.</h2>
+                    <h2 className="reveal">{t('howWeWorkPage.execution')}</h2>
                 </div>
             </section>
 
             <section className="section-padding bg-light">
                 <div className="container">
                     <div className="text-center mb-4 reveal">
-                        <span className="section-subtitle">Assurance</span>
-                        <h2>What our methodology ensures</h2>
+                        <span className="section-subtitle">{t('howWeWorkPage.assurance.subtitle')}</span>
+                        <h2>{t('howWeWorkPage.assurance.title')}</h2>
                     </div>
                     <div className="assurance-grid">
                         {assurances.map((item, i) => (

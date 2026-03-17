@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import './Expertise.css';
 
 const Expertise = () => {
+    const { t } = useLanguage();
     // Add simple scroll reveal
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -23,37 +25,37 @@ const Expertise = () => {
     const areas = [
         {
             id: "01",
-            title: "Strategic Intelligence & Research",
-            desc: "We provide high-level sectoral studies and diagnostics to help our partners navigate complex African markets and institutional landscapes.",
-            items: ["Sectoral studies and diagnostics", "Institutional technical assistance", "Competitive intelligence"],
+            title: t('expertisePage.areas.1.title'),
+            desc: t('expertisePage.areas.1.desc'),
+            items: t('expertisePage.areas.1.items') || [],
             image: "/images/hero2.png"
         },
         {
             id: "02",
-            title: "Digital Governance, Data & MEL",
-            desc: "Modernizing governance through robust data architecture and impact-driven Monitoring, Evaluation, and Learning systems.",
-            items: ["Monitoring, Evaluation & Learning systems", "Data architecture and analytics", "Automated donor reporting"],
+            title: t('expertisePage.areas.2.title'),
+            desc: t('expertisePage.areas.2.desc'),
+            items: t('expertisePage.areas.2.items') || [],
             image: "/images/hero3.png"
         },
         {
             id: "03",
-            title: "Social Marketing & Communication",
-            desc: "Driving social change and project acceptability through evidence-based communication and community engagement strategies.",
-            items: ["Behaviour change communication", "Community mobilization", "Advocacy & Social acceptability"],
+            title: t('expertisePage.areas.3.title'),
+            desc: t('expertisePage.areas.3.desc'),
+            items: t('expertisePage.areas.3.items') || [],
             image: "/images/hero1.png"
         },
         {
             id: "04",
-            title: "Climate, Environment & Infrastructure",
-            desc: "Integrating environmental sustainability and climate resilience into infrastructure and territorial planning.",
-            items: ["E&S impact assessments", "Climate adaptation strategies", "Green finance advisory"],
+            title: t('expertisePage.areas.4.title'),
+            desc: t('expertisePage.areas.4.desc'),
+            items: t('expertisePage.areas.4.items') || [],
             image: "/images/hero2.png"
         },
         {
             id: "05",
-            title: "Human Development & Social Capital",
-            desc: "Investing in people and communities to ensure project sustainability and long-term social impact.",
-            items: ["Community development", "Capacity building & Training", "Skills transfer & Local ownership"],
+            title: t('expertisePage.areas.5.title'),
+            desc: t('expertisePage.areas.5.desc'),
+            items: t('expertisePage.areas.5.items') || [],
             image: "/images/hero3.png"
         }
     ];
@@ -63,9 +65,9 @@ const Expertise = () => {
             <section className="page-header">
                 <img src="/images/hero2.png" alt="" className="header-bg-image" />
                 <div className="container header-content">
-                    <span className="section-subtitle">Core Pillars</span>
-                    <h1 className="reveal">Our Areas of Expertise</h1>
-                    <p className="header-desc reveal delay-1">Integrated expertise designed to transform complex challenges into measurable developmental impact.</p>
+                    <span className="section-subtitle">{t('expertisePage.header.subtitle')}</span>
+                    <h1 className="reveal">{t('expertisePage.header.title')}</h1>
+                    <p className="header-desc reveal delay-1">{t('expertisePage.header.desc')}</p>
                 </div>
             </section>
 

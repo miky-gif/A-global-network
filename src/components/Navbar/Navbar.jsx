@@ -1,16 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobe, FaChevronDown } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [language, setLanguage] = useState('EN');
+    const { language, setLanguage, t } = useLanguage();
+    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+    const langMenuRef = useRef(null);
+    const mobileLangMenuRef = useRef(null);
     const location = useLocation();
 
-    const toggleLanguage = () => {
-        setLanguage(prev => prev === 'EN' ? 'FR' : 'EN');
+    // Close lang menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const isOutsideDesktop = langMenuRef.current && !langMenuRef.current.contains(event.target);
+            const isOutsideMobile = mobileLangMenuRef.current && !mobileLangMenuRef.current.contains(event.target);
+            
+            if (isOutsideDesktop && isOutsideMobile) {
+                setIsLangMenuOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const changeLanguage = (lang) => {
+        setLanguage(lang);
+        setIsLangMenuOpen(false);
     };
 
     // Handle scroll effect
@@ -42,12 +61,12 @@ const Navbar = () => {
     }, [mobileMenuOpen]);
 
     const navLinks = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About' },
-        { path: '/expertise', label: 'Expertise' },
-        { path: '/how-we-work', label: 'Approach' },
-        { path: '/network', label: 'Network' },
-        { path: '/team', label: 'Team' }
+        { path: '/', label: t('nav.home') },
+        { path: '/about', label: t('nav.about') },
+        { path: '/expertise', label: t('nav.expertise') },
+        { path: '/how-we-work', label: t('nav.approach') },
+        { path: '/network', label: t('nav.network') },
+        { path: '/team', label: t('nav.team') }
     ];
 
     return (
@@ -58,7 +77,7 @@ const Navbar = () => {
                         <div className="nav-brand">
                             <Link to="/">
                                 <img 
-                                    src={scrolled ? "/images/logo.png" : "/images/logo1.png"} 
+                                    src={scrolled ? "/images/logo.png" : "/images/logo blanc.png"} 
                                     alt="Impact Horizon Africa" 
                                     className="logo-img"
                                 />
@@ -81,12 +100,38 @@ const Navbar = () => {
 
                         {/* Right Actions */}
                         <div className="nav-actions">
-                            <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle Language">
-                                <FaGlobe size={18} />
-                                <span>{language}</span>
-                            </button>
+                            <div className="lang-menu-container" ref={langMenuRef}>
+                                <button 
+                                    className={`lang-toggle ${isLangMenuOpen ? 'active' : ''}`} 
+                                    onClick={() => setIsLangMenuOpen(!isLangMenuOpen)} 
+                                    aria-label="Toggle Language"
+                                >
+                                    <FaGlobe size={18} />
+                                    <span>{language}</span>
+                                    <FaChevronDown size={12} className="lang-chevron" />
+                                </button>
+                                
+                                {isLangMenuOpen && (
+                                    <div className="lang-dropdown shadow-lg">
+                                        <button 
+                                            className={`lang-option ${language === 'EN' ? 'selected' : ''}`}
+                                            onClick={() => changeLanguage('EN')}
+                                        >
+                                            <span className="lang-code">EN</span>
+                                            <span className="lang-name">English</span>
+                                        </button>
+                                        <button 
+                                            className={`lang-option ${language === 'FR' ? 'selected' : ''}`}
+                                            onClick={() => changeLanguage('FR')}
+                                        >
+                                            <span className="lang-code">FR</span>
+                                            <span className="lang-name">Français</span>
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                             <Link to="/contact" className="btn nav-btn">
-                                Contact
+                                {t('nav.contact')}
                             </Link>
                             <button 
                                 className="mobile-toggle" 
@@ -105,10 +150,35 @@ const Navbar = () => {
                     <div className="mobile-header">
                         <img src="/images/logo.png" alt="Impact Horizon Africa" className="mobile-logo-img" />
                         <div className="mobile-header-actions">
-                            <button className="lang-toggle mobile-lang-toggle" onClick={toggleLanguage}>
-                                <FaGlobe size={20} />
-                                <span>{language}</span>
-                            </button>
+                            <div className="lang-menu-container mobile-lang-container" ref={mobileLangMenuRef}>
+                                <button 
+                                    className={`lang-toggle mobile-lang-toggle ${isLangMenuOpen ? 'active' : ''}`} 
+                                    onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                                >
+                                    <FaGlobe size={20} />
+                                    <span>{language}</span>
+                                    <FaChevronDown size={14} className="lang-chevron" />
+                                </button>
+                                
+                                {isLangMenuOpen && (
+                                    <div className="lang-dropdown mobile-lang-dropdown shadow-lg">
+                                        <button 
+                                            className={`lang-option ${language === 'EN' ? 'selected' : ''}`}
+                                            onClick={() => changeLanguage('EN')}
+                                        >
+                                            <span className="lang-code">EN</span>
+                                            <span className="lang-name">English</span>
+                                        </button>
+                                        <button 
+                                            className={`lang-option ${language === 'FR' ? 'selected' : ''}`}
+                                            onClick={() => changeLanguage('FR')}
+                                        >
+                                            <span className="lang-code">FR</span>
+                                            <span className="lang-name">Français</span>
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                             <button 
                                 onClick={() => setMobileMenuOpen(false)}
                                 aria-label="Close Menu"
@@ -135,7 +205,7 @@ const Navbar = () => {
                             className="mt-4 btn btn-primary btn-full text-center"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Contact Us
+                            {t('nav.contactUs')}
                         </Link>
                     </div>
                     

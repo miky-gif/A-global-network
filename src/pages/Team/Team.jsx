@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Team.css';
 
 const Team = () => {
+    const { t } = useLanguage();
     // Add simple scroll reveal
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -24,8 +26,8 @@ const Team = () => {
     const founders = [
         {
             name: "Leonel FOTSO",
-            role: "Co-Founder | Strategic Intelligence",
-            desc: "Expert in international marketing and strategic positioning. Leads market intelligence and impact-driven communication strategies.",
+            role: t('teamPage.members.leonel.role'),
+            desc: t('teamPage.members.leonel.desc'),
             image: "/images/eqp1.jpeg",
             socials: {
                 linkedin: "https://linkedin.com",
@@ -35,8 +37,8 @@ const Team = () => {
         },
         {
             name: "Fiacre WANJI",
-            role: "Co-Founder | Finance & Compliance",
-            desc: "Financial management professional. Oversees financial structuring, donor accountability, and compliance frameworks.",
+            role: t('teamPage.members.fiacre.role'),
+            desc: t('teamPage.members.fiacre.desc'),
             image: "/images/eqp2.jpeg",
             socials: {
                 linkedin: "https://linkedin.com",
@@ -46,8 +48,8 @@ const Team = () => {
         },
         {
             name: "Jaurès TCHAPDA",
-            role: "Co-Founder | Legal & Governance",
-            desc: "Licensed Attorney. Provides high-level legal structuring, regulatory compliance, and multidimensional governance advisory.",
+            role: t('teamPage.members.jaures.role'),
+            desc: t('teamPage.members.jaures.desc'),
             image: "/images/eqp3.jpeg",
             socials: {
                 linkedin: "https://linkedin.com",
@@ -62,9 +64,9 @@ const Team = () => {
             <section className="page-header">
                 <img src="/images/hero2.png" alt="" className="header-bg-image" />
                 <div className="container header-content">
-                    <span className="section-subtitle">Leadership</span>
-                    <h1 className="reveal">Founding Team</h1>
-                    <p className="header-desc reveal delay-1">A complementary leadership team aligned with the rigorous execution of development projects.</p>
+                    <span className="section-subtitle">{t('teamPage.header.subtitle')}</span>
+                    <h1 className="reveal">{t('teamPage.header.title')}</h1>
+                    <p className="header-desc reveal delay-1">{t('teamPage.header.desc')}</p>
                 </div>
             </section>
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
+    const { t } = useLanguage();
     return (
         <footer className="footer">
             <div className="container">
@@ -12,7 +14,7 @@ const Footer = () => {
                     <div className="footer-brand">
                         <Link to="/" className="footer-logo">Impact Horizon Africa</Link>
                         <p className="footer-tagline">
-                            A premier pan-African platform bringing together a global network of experts dedicated to the design, capture, and execution of high-impact development projects.
+                            {t('footer.tagline')}
                         </p>
                         <div className="footer-socials">
                             <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
@@ -24,27 +26,27 @@ const Footer = () => {
                     {/* Links Section */}
                     <div className="footer-nav-group">
                         <div className="footer-col">
-                            <h4>Company</h4>
+                            <h4>{t('footer.company')}</h4>
                             <ul>
-                                <li><Link to="/about">About Us</Link></li>
-                                <li><Link to="/team">Leadership</Link></li>
-                                <li><Link to="/network">Our Network</Link></li>
-                                <li><Link to="/contact">Careers</Link></li>
+                                <li><Link to="/about">{t('footer.links.about')}</Link></li>
+                                <li><Link to="/team">{t('footer.links.leadership')}</Link></li>
+                                <li><Link to="/network">{t('footer.links.network')}</Link></li>
+                                <li><Link to="/contact">{t('footer.links.careers')}</Link></li>
                             </ul>
                         </div>
                         <div className="footer-col">
-                            <h4>Services</h4>
+                            <h4>{t('footer.services')}</h4>
                             <ul>
-                                <li><Link to="/expertise">Core Pillars</Link></li>
-                                <li><Link to="/how-we-work">Methodology</Link></li>
-                                <li><Link to="/expertise">Strategic Intelligence</Link></li>
-                                <li><Link to="/expertise">Digital Governance</Link></li>
+                                <li><Link to="/expertise">{t('footer.links.pillars')}</Link></li>
+                                <li><Link to="/how-we-work">{t('footer.links.methodology')}</Link></li>
+                                <li><Link to="/expertise">{t('footer.links.strategic')}</Link></li>
+                                <li><Link to="/expertise">{t('footer.links.digital')}</Link></li>
                             </ul>
                         </div>
                         <div className="footer-col">
-                            <h4>Contact</h4>
+                            <h4>{t('footer.contact')}</h4>
                             <ul>
-                                <li>Kigali, Rwanda</li>
+                                <li>{t('footer.location')}</li>
                                 <li><a href="mailto:contact@impacthorizon.africa">contact@impacthorizon.africa</a></li>
                                 <li><a href="tel:+32493983815">+32 493 98 38 15</a></li>
                             </ul>
@@ -54,10 +56,10 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Impact Horizon Africa. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Impact Horizon Africa. {t('footer.rights')}</p>
                     <div className="footer-bottom-links">
-                        <Link to="/privacy">Privacy Policy</Link>
-                        <Link to="/terms">Terms of Service</Link>
+                        <Link to="/privacy">{t('footer.privacy')}</Link>
+                        <Link to="/terms">{t('footer.terms')}</Link>
                     </div>
                 </div>
             </div>

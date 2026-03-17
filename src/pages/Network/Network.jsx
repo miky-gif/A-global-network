@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import './Network.css';
 
 const Network = () => {
+    const { t } = useLanguage();
     // Add simple scroll reveal
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -22,23 +24,23 @@ const Network = () => {
 
     const regions = [
         {
-            name: "West Africa",
-            focus: "Strategic hubs in French and English speaking markets, including Senegal, Côte d'Ivoire, and Nigeria.",
+            name: t('networkPage.regions.items.1.name'),
+            focus: t('networkPage.regions.items.1.focus'),
             image: "/images/hero1.png"
         },
         {
-            name: "Central Africa",
-            focus: "Institutional advisory and high-level sectoral diagnostics throughout the CEMAC region.",
+            name: t('networkPage.regions.items.2.name'),
+            focus: t('networkPage.regions.items.2.focus'),
             image: "/images/hero2.png"
         },
         {
-            name: "East Africa",
-            focus: "Regional headquarters in Kigali, Rwanda, serving as a tech and governance innovation center.",
+            name: t('networkPage.regions.items.3.name'),
+            focus: t('networkPage.regions.items.3.focus'),
             image: "/images/hero3.png"
         },
         {
-            name: "Southern Africa",
-            focus: "Dedicated infrastructure, green finance, and donor-aligned impact measurement services.",
+            name: t('networkPage.regions.items.4.name'),
+            focus: t('networkPage.regions.items.4.focus'),
             image: "/images/hero1.png"
         }
     ];
@@ -48,19 +50,19 @@ const Network = () => {
             <section className="page-header">
                 <img src="/images/hero1.png" alt="" className="header-bg-image" />
                 <div className="container header-content">
-                    <span className="section-subtitle">Presence</span>
-                    <h1 className="reveal">A Pan-African Expert Network</h1>
-                    <p className="header-desc reveal delay-1">Built for scale, agility, and measurable impact across the continent's most strategic development corridors.</p>
+                    <span className="section-subtitle">{t('networkPage.header.subtitle')}</span>
+                    <h1 className="reveal">{t('networkPage.header.title')}</h1>
+                    <p className="header-desc reveal delay-1">{t('networkPage.header.desc')}</p>
                 </div>
             </section>
 
             <section className="section-padding">
                 <div className="container network-intro-grid">
                     <div className="network-intro-text reveal">
-                        <span className="section-subtitle">Operational Scale</span>
-                        <h2>Agile teams deployed where impact matters</h2>
+                        <span className="section-subtitle">{t('networkPage.intro.subtitle')}</span>
+                        <h2>{t('networkPage.intro.title')}</h2>
                         <p className="text-muted mb-4">
-                            With over 150 experts strategically embedded across Africa, we operate at the intersection of international standards and local institutional realities. Our model combines deep local presence with centralized coordination.
+                            {t('networkPage.intro.desc')}
                         </p>
                     </div>
                     <div className="network-intro-image reveal delay-1">
@@ -73,8 +75,8 @@ const Network = () => {
             <section className="section-padding bg-light">
                 <div className="container">
                     <div className="text-center mb-4 reveal">
-                        <span className="section-subtitle">Regions</span>
-                        <h2>Where we operate</h2>
+                        <span className="section-subtitle">{t('networkPage.regions.subtitle')}</span>
+                        <h2>{t('networkPage.regions.title')}</h2>
                     </div>
                     <div className="regions-grid">
                         {regions.map((r, i) => (
@@ -97,15 +99,15 @@ const Network = () => {
                     <div className="network-stats">
                         <div className="network-stat reveal delay-1">
                             <span className="network-stat-num">150+</span>
-                            <span className="network-stat-label">Specialized Experts</span>
+                            <span className="network-stat-label">{t('networkPage.stats.experts')}</span>
                         </div>
                         <div className="network-stat reveal delay-2">
                             <span className="network-stat-num">15+</span>
-                            <span className="network-stat-label">Countries Covered</span>
+                            <span className="network-stat-label">{t('networkPage.stats.countries')}</span>
                         </div>
                         <div className="network-stat reveal delay-3">
                             <span className="network-stat-num">48h</span>
-                            <span className="network-stat-label">Mobilization Lead Time</span>
+                            <span className="network-stat-label">{t('networkPage.stats.mobilization')}</span>
                         </div>
                     </div>
                 </div>

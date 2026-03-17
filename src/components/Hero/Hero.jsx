@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Hero.css';
 
 const Hero = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const { t } = useLanguage();
 
     useEffect(() => { setIsLoaded(true); }, []);
 
@@ -19,21 +21,17 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <div className={`hero-text-box ${isLoaded ? 'loaded' : ''}`}>
-                    <span className="hero-tagline">Impact Horizon Africa</span>
-                    <h1 className="hero-title">
-                        A Global Network, <br />
-                        Built for Impact.
-                    </h1>
+                    <span className="hero-tagline">{t('hero.tagline')}</span>
+                    <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: t('hero.title') }}></h1>
                     <p className="hero-subtitle">
-                        We operate at the intersection of global standards and local realities, 
-                        ensuring development projects are effectively delivered and socially anchored.
+                        {t('hero.subtitle')}
                     </p>
                     <div className="hero-btns">
                         <Link to="/expertise" className="btn btn-primary">
-                            Discover Our Impact <FaArrowRight />
+                            {t('hero.discover')} <FaArrowRight />
                         </Link>
                         <Link to="/contact" className="btn hero-btn-outline">
-                            Explore Partnership
+                            {t('hero.explore')}
                         </Link>
                     </div>
                 </div>
