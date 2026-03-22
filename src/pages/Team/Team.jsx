@@ -28,7 +28,7 @@ const Team = () => {
             name: "Leonel FOTSO",
             role: t('teamPage.members.leonel.role'),
             desc: t('teamPage.members.leonel.desc'),
-            image: "/images/eqp1.jpeg",
+            image: "/images/eqp1.png",
             socials: {
                 linkedin: "https://linkedin.com",
                 twitter: "https://twitter.com",
@@ -39,7 +39,7 @@ const Team = () => {
             name: "Fiacre WANJI",
             role: t('teamPage.members.fiacre.role'),
             desc: t('teamPage.members.fiacre.desc'),
-            image: "/images/eqp2.jpeg",
+            image: "/images/eqp2.png",
             socials: {
                 linkedin: "https://linkedin.com",
                 twitter: "https://twitter.com",
@@ -50,7 +50,7 @@ const Team = () => {
             name: "Jaurès TCHAPDA",
             role: t('teamPage.members.jaures.role'),
             desc: t('teamPage.members.jaures.desc'),
-            image: "/images/eqp3.jpeg",
+            image: "/images/eqp3.png",
             socials: {
                 linkedin: "https://linkedin.com",
                 twitter: "https://twitter.com",
@@ -82,7 +82,7 @@ const Team = () => {
                                     <h3>{member.name}</h3>
                                     <span className="member-role">{member.role}</span>
                                     <p className="text-muted">{member.desc}</p>
-                                    
+
                                     <div className="member-socials">
                                         <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                                             <FaLinkedin />
