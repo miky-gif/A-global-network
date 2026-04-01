@@ -9,6 +9,7 @@ import Expertise from './pages/Expertise/Expertise';
 import HowWeWork from './pages/HowWeWork/HowWeWork';
 import Network from './pages/Network/Network';
 import Contact from './pages/Contact/Contact';
+import JoinNetwork from './pages/JoinNetwork/JoinNetwork';
 import { LanguageProvider } from './context/LanguageContext';
 
 // Scroll to top on route change
@@ -36,6 +37,7 @@ function App() {
               <Route path="/network" element={<Network />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/join-network" element={<JoinNetwork />} />
             </Routes>
           </main>
           <Footer />

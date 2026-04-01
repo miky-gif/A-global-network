@@ -52,7 +52,10 @@ const Contact = () => {
                             </div>
                             <div className="contact-detail">
                                 <span className="detail-label">{t('contactPage.info.phone')}</span>
-                                <span className="detail-value"><a href="tel:+32493983815">+32 493 98 38 15</a></span>
+                                <span className="detail-value">
+                                    <a href="tel:+237699970402">+237 699 970 402</a><br />
+                                    <a href="tel:+32493983815">+32 493 98 38 15</a>
+                                </span>
                             </div>
                         </div>
                     </div>

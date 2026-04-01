@@ -25,7 +25,7 @@
 
 .team-card-image {
     width: 100%;
-    height: 380px;
+    aspect-ratio: 4/5;
     overflow: hidden;
     background: var(--light);
 }
@@ -34,13 +34,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: var(--transition);
-    filter: grayscale(80%);
 }
 
 .team-card:hover .team-card-image img {
     transform: scale(1.03);
-    filter: grayscale(0%);
 }
 
 .team-card-info {
@@ -99,9 +98,5 @@
 @media (max-width: 600px) {
     .team-grid {
         grid-template-columns: 1fr;
-    }
-
-    .team-card-image {
-        height: 320px;
     }
 }

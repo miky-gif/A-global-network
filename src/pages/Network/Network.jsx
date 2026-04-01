@@ -66,7 +66,7 @@ const Network = () => {
                         </p>
                     </div>
                     <div className="network-intro-image reveal delay-1">
-                        <img src="/images/hero2.png" alt="Our network across Africa" />
+                        <img src="/images/page d'accueil.jpg" alt="Our network across Africa" />
                         <div className="network-image-backdrop"></div>
                     </div>
                 </div>

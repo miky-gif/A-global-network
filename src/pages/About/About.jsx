@@ -60,14 +60,14 @@ const About = () => {
                         </div>
                     </div>
                     <div className="about-story-image reveal-right">
-                        <img src="/images/hero2.png" alt="Our impact across Africa" />
+                        <img src="/images/Strategic Intelligence.jpg" alt="Our impact across Africa" />
                         <div className="about-image-backdrop"></div>
                     </div>
                 </div>
             </section>
 
             <section className="about-fullwidth-image">
-                <img src="/images/hero1.png" alt="Development landscape" />
+                <img src="/images/social.jpg" alt="Development landscape" />
                 <div className="fullwidth-overlay">
                     <h2 className="reveal">{t('aboutPage.driving')}</h2>
                 </div>

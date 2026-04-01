@@ -95,7 +95,7 @@ const HowWeWork = () => {
             </section>
 
             <section className="hww-image-band">
-                <img src="/images/hero2.png" alt="Our process in action" />
+                <img src="/images/social.jpg" alt="Our process in action" />
                 <div className="fullwidth-overlay">
                     <h2 className="reveal">{t('howWeWorkPage.execution')}</h2>
                 </div>

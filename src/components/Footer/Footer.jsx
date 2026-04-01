@@ -48,6 +48,7 @@ const Footer = () => {
                             <ul>
                                 <li>{t('footer.location')}</li>
                                 <li><a href="mailto:contact@impacthorizon.africa">contact@impacthorizon.africa</a></li>
+                                <li><a href="tel:+237699970402">+237 699 970 402</a></li>
                                 <li><a href="tel:+32493983815">+32 493 98 38 15</a></li>
                             </ul>
                         </div>

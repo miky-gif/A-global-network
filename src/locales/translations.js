@@ -76,6 +76,12 @@ export const translations = {
                 desc: "Partner with our high-level network of experts specialized in African development.",
                 btn1: "Start a Conversation",
                 btn2: "Explore Services"
+            },
+            joinNetwork: {
+                subtitle: "Expert Network",
+                title: "Join Our Pan-African Expert Network",
+                p1: "Are you a top-tier consultant or technical expert? Impact Horizon Africa is looking for multidisciplinary experts to deploy on high-impact projects across the continent.",
+                btn: "Click here to join the network"
             }
         },
         footer: {
@@ -93,7 +99,7 @@ export const translations = {
                 strategic: "Strategic Intelligence",
                 digital: "Digital Governance"
             },
-            location: "Kigali, Rwanda",
+            location: "Cameroun",
             rights: "All rights reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
@@ -214,7 +220,7 @@ export const translations = {
                 items: {
                     1: { name: "West Africa", focus: "Strategic hubs in French and English speaking markets, including Senegal, Côte d'Ivoire, and Nigeria." },
                     2: { name: "Central Africa", focus: "Institutional advisory and high-level sectoral diagnostics throughout the CEMAC region." },
-                    3: { name: "East Africa", focus: "Regional headquarters in Kigali, Rwanda, serving as a tech and governance innovation center." },
+                    3: { name: "East Africa", focus: "Regional headquarters in Cameroun, serving as a tech and governance innovation center." },
                     4: { name: "Southern Africa", focus: "Dedicated infrastructure, green finance, and donor-aligned impact measurement services." }
                 }
             },
@@ -277,6 +283,22 @@ export const translations = {
                 message: "Message",
                 messagePh: "Briefly describe your project or needs...",
                 submit: "Send Message"
+            }
+        },
+        joinNetworkPage: {
+            header: {
+                subtitle: "Join Us",
+                title: "Expert Registration",
+                desc: "Join a high-level network and contribute to sustainable development projects in Africa."
+            },
+            form: {
+                name: "Full Name",
+                country: "Country",
+                sector: "Sector of Activity",
+                specialty: "Specialty",
+                experience: "Years of Experience",
+                cv: "Upload CV (PDF, DOCX)",
+                submit: "Submit Application"
             }
         }
     },
@@ -357,6 +379,12 @@ export const translations = {
                 desc: "Participez avec notre réseau de haut niveau d'experts spécialisés dans le développement en Afrique.",
                 btn1: "Démarrer une Conversation",
                 btn2: "Explorer les Services"
+            },
+            joinNetwork: {
+                subtitle: "Réseau d'Experts",
+                title: "Rejoignez Notre Réseau d'Experts Panafricain",
+                p1: "Vous êtes consultant de haut niveau ou expert technique ? Impact Horizon Africa recherche des profils pluridisciplinaires pour des déploiements sur des projets à fort impact à travers le continent.",
+                btn: "Cliquer ici pour rejoindre le réseau"
             }
         },
         footer: {
@@ -374,7 +402,7 @@ export const translations = {
                 strategic: "Intelligence Stratégique",
                 digital: "Gouvernance Numérique"
             },
-            location: "Kigali, Rwanda",
+            location: "Cameroun",
             rights: "Tous droits réservés.",
             privacy: "Politique de Confidentialité",
             terms: "Conditions d'Utilisation"
@@ -495,7 +523,7 @@ export const translations = {
                 items: {
                     1: { name: "Afrique de l'Ouest", focus: "Pôles stratégiques dans les marchés francophones et anglophones, y compris le Sénégal, la Côte d'Ivoire et le Nigeria." },
                     2: { name: "Afrique Centrale", focus: "Conseil institutionnel et diagnostics sectoriels de haut niveau dans toute la zone CEMAC." },
-                    3: { name: "Afrique de l'Est", focus: "Siège régional à Kigali, Rwanda, servant de centre d'innovation technologique et de gouvernance." },
+                    3: { name: "Afrique de l'Est", focus: "Siège régional au Cameroun, servant de centre d'innovation technologique et de gouvernance." },
                     4: { name: "Afrique Australe", focus: "Infrastructures dédiées, finance verte et services de mesure d'impact alignés sur les donateurs." }
                 }
             },
@@ -558,6 +586,22 @@ export const translations = {
                 message: "Message",
                 messagePh: "Décrivez brièvement votre projet ou vos besoins...",
                 submit: "Envoyer le message"
+            }
+        },
+        joinNetworkPage: {
+            header: {
+                subtitle: "Nous Rejoindre",
+                title: "Inscription des Experts",
+                desc: "Rejoignez un réseau de haut niveau et contribuez à des projets de développement durable en Afrique."
+            },
+            form: {
+                name: "Nom complet",
+                country: "Pays",
+                sector: "Secteur d'activité",
+                specialty: "Spécialité",
+                experience: "Nombre d'année d'expérience",
+                cv: "Importer votre CV (PDF, DOCX)",
+                submit: "Soumettre ma candidature"
             }
         }
     }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import Hero from '../../components/Hero/Hero';
 import { useLanguage } from '../../context/LanguageContext';
 import './Home.css';
@@ -303,6 +303,33 @@ const Home = () => {
                         </div>
                         <div className="network-map-wrapper reveal-right">
                             <img src="/images/afrique.png" alt="Africa Map" className="africa-map-img" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* JOIN OUR NETWORK SECTION */}
+            <section className="home-join-section section-padding">
+                <div className="container">
+                    <div className="home-join-card reveal">
+                        <div className="home-join-grid">
+                            <div className="home-join-content">
+                                <span className="section-subtitle">{t('home.joinNetwork.subtitle')}</span>
+                                <h2>{t('home.joinNetwork.title')}</h2>
+                                <p className="text-muted">{t('home.joinNetwork.p1')}</p>
+                                <ul className="home-join-benefits">
+                                    <li><FaCheckCircle className="benefit-icon" /> Accès à des projets d'envergure</li>
+                                    <li><FaCheckCircle className="benefit-icon" /> Réseau panafricain d'élite</li>
+                                    <li><FaCheckCircle className="benefit-icon" /> Collaboration internationale</li>
+                                </ul>
+                                <Link to="/join-network" className="btn btn-primary mt-4">
+                                    {t('home.joinNetwork.btn')} <FaArrowRight />
+                                </Link>
+                            </div>
+                            <div className="home-join-image">
+                                <img src="/images/Expert Network.jpg" alt="Join Network" loading="lazy" />
+                                <div className="join-image-overlay"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

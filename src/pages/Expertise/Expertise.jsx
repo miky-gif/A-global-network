@@ -28,28 +28,28 @@ const Expertise = () => {
             title: t('expertisePage.areas.1.title'),
             desc: t('expertisePage.areas.1.desc'),
             items: t('expertisePage.areas.1.items') || [],
-            image: "/images/hero2.png"
+            image: "/images/Strategic Intelligence.jpg"
         },
         {
             id: "02",
             title: t('expertisePage.areas.2.title'),
             desc: t('expertisePage.areas.2.desc'),
             items: t('expertisePage.areas.2.items') || [],
-            image: "/images/hero3.png"
+            image: "/images/digital.jpg"
         },
         {
             id: "03",
             title: t('expertisePage.areas.3.title'),
             desc: t('expertisePage.areas.3.desc'),
             items: t('expertisePage.areas.3.items') || [],
-            image: "/images/hero1.png"
+            image: "/images/social.jpg"
         },
         {
             id: "04",
             title: t('expertisePage.areas.4.title'),
             desc: t('expertisePage.areas.4.desc'),
             items: t('expertisePage.areas.4.items') || [],
-            image: "/images/hero2.png"
+            image: "/images/hero1.png"
         },
         {
             id: "05",
