@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap');
 
+/* Global Ampersand Fix: Targets the extravagant serif ampersand icon across all headings */
+@font-face {
+  font-family: 'CleanAmpersand';
+  src: local('Inter'), local('Arial'), local('sans-serif');
+  unicode-range: U+0026;
+}
+
 :root {
   --primary: #2454cc;
   --primary-light: #4a74e0;
@@ -53,7 +60,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'CleanAmpersand', 'Playfair Display', Georgia, serif;
   color: var(--dark);
   line-height: 1.2;
   font-weight: 700;

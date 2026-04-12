@@ -26,7 +26,7 @@ export const translations = {
             about: {
                 subtitle: "About Us",
                 title: "A global network, built for impact in Africa",
-                p1: "Impact Horizon Africa is a premier pan-African platform bringing together a global network of experts dedicated to the design, capture and execution of high-impact development projects.",
+                p1: "Impact Horizon Africa is a premier pan-African platform bringing together a global network of experts dedicated to the design, capture, and execution of high-impact development projects.",
                 p2: "We operate at the intersection of international standards and local institutional realities, ensuring that projects are effectively delivered and socially anchored.",
                 btn: "Discover Our Story"
             },
@@ -60,7 +60,7 @@ export const translations = {
                 title: "Trusted by Leaders",
                 intro: "What our partners say about the impact of our network.",
                 1: { quote: "Impact Horizon Africa brought exceptional strategic clarity to our regional infrastructure planning. Their ability to bridge global standards with deep local context is unmatched.", author: "Dr. Amina Oumar", role: "Director, Regional Development Bank" },
-                2: { quote: "A truly responsive and highly skilled network. They mobilized a multidisciplinary team within 48 hours to help us navigate a complex regulatory environment.", author: "Jean-Paul Kagame", role: "Program Header, International NGO" },
+                2: { quote: "A truly responsive and highly skilled network. They mobilized a multidisciplinary team within 48 hours to help us navigate a complex regulatory environment.", author: "Jean-Paul Kagame", role: "Head of Programs, International NGO" },
                 3: { quote: "The rigor of their analytical work transformed our approach to digital governance scaling across West Africa. They are the benchmark for premium consulting.", author: "Sarah Mensah", role: "Chief Strategy Officer, TechAfrica" }
             },
             network: {
@@ -81,7 +81,7 @@ export const translations = {
                 subtitle: "Expert Network",
                 title: "Join Our Pan-African Expert Network",
                 p1: "Are you a top-tier consultant or technical expert? Impact Horizon Africa is looking for multidisciplinary experts to deploy on high-impact projects across the continent.",
-                btn: "Click here to join the network"
+                btn: "Join the Network"
             }
         },
         footer: {
@@ -99,7 +99,7 @@ export const translations = {
                 strategic: "Strategic Intelligence",
                 digital: "Digital Governance"
             },
-            location: "Cameroun",
+            location: "Cameroon",
             rights: "All rights reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
@@ -164,7 +164,7 @@ export const translations = {
                 3: {
                     title: "Social Marketing & Communication",
                     desc: "Driving social change and project acceptability through evidence-based communication and community engagement strategies.",
-                    items: ["Behaviour change communication", "Community mobilization", "Advocacy & Social acceptability"]
+                    items: ["Behavior change communication", "Community mobilization", "Advocacy & Social acceptability"]
                 },
                 4: {
                     title: "Climate, Environment & Infrastructure",
@@ -189,7 +189,7 @@ export const translations = {
                 2: { title: "Strategic Structuring", desc: "Aligning project design with donor priorities and local institutional frameworks." },
                 3: { title: "Tactical Deployment", desc: "Rapid mobilization of expert networks and operational coordination in the field." },
                 4: { title: "Monitoring & MEL", desc: "Continuous performance tracking via digital MEL systems and evidence-based adaptive management." },
-                5: { title: "Impact Proof & Reporting", desc: "Formal impact measurement, donor-compliant reporting, and capitalisation of results." }
+                5: { title: "Impact Proof & Reporting", desc: "Formal impact measurement, donor-compliant reporting, and capitalization of results." }
             },
             execution: "Precision in execution.",
             assurance: {
@@ -219,8 +219,8 @@ export const translations = {
                 title: "Where we operate",
                 items: {
                     1: { name: "West Africa", focus: "Strategic hubs in French and English speaking markets, including Senegal, Côte d'Ivoire, and Nigeria." },
-                    2: { name: "Central Africa", focus: "Institutional advisory and high-level sectoral diagnostics throughout the CEMAC region." },
-                    3: { name: "East Africa", focus: "Regional headquarters in Cameroun, serving as a tech and governance innovation center." },
+                    2: { name: "Central Africa", focus: "Institutional advisory and high-level sectoral diagnostics throughout the CEMAC region, coordinated from Cameroon." },
+                    3: { name: "East Africa", focus: "Strategic hubs covering East African development corridors, serving as tech and governance innovation centers." },
                     4: { name: "Southern Africa", focus: "Dedicated infrastructure, green finance, and donor-aligned impact measurement services." }
                 }
             },
@@ -353,14 +353,14 @@ export const translations = {
                 badgeText: "Experts<br />Panafricains",
                 title: "Combler le fossé entre la théorie et le terrain",
                 features: {
-                    1: { title: "Maîtrise de bout en bout des projets", desc: "Nous soutenons l'ensemble du cycle de vie du projet, de la conception stratégique au reporting d'impact, en ne laissant aucun vide." },
+                    1: { title: "Maîtrise de bout en bout des projets", desc: "Nous soutenons l'ensemble du cycle de vie du projet, de la conception stratégique au reporting d'impact, sans rupture entre la conception et le terrain." },
                     2: { title: "Réseau Panafricain", desc: "Accès à plus de 150 experts opérationnels sur le continent, permettant une mobilisation rapide et un ancrage local profond." },
                     3: { title: "Standards Globaux, Approche Locale", desc: "Nous nous alignons strictement sur les attentes des donateurs internationaux tout en comprenant parfaitement les réalités institutionnelles africaines." }
                 }
             },
             testimonials: {
                 subtitle: "Témoignages",
-                title: "Approuvé par les Leaders",
+                title: "La confiance des leaders",
                 intro: "Ce que nos partenaires disent de l'impact de notre réseau.",
                 1: { quote: "Impact Horizon Africa a apporté une clarté stratégique exceptionnelle à notre planification des infrastructures. Leur capacité à associer standards internationaux et contexte local profond est inégalée.", author: "Dr. Amina Oumar", role: "Directrice, Banque Régionale de Développement" },
                 2: { quote: "Un réseau véritablement réactif et hautement qualifié. Ils ont mobilisé une équipe pluridisciplinaire en 48 heures pour nous aider à naviguer dans un environnement réglementaire complexe.", author: "Jean-Paul Kagame", role: "Chef de Programme, ONG Internationale" },
@@ -376,15 +376,15 @@ export const translations = {
             cta: {
                 subtitle: "Engagez-vous Avec Nous",
                 title: "Prêt à accélérer l'impact ?",
-                desc: "Participez avec notre réseau de haut niveau d'experts spécialisés dans le développement en Afrique.",
+                desc: "Collaborez avec notre réseau de haut niveau d'experts spécialisés dans le développement en Afrique.",
                 btn1: "Démarrer une Conversation",
                 btn2: "Explorer les Services"
             },
             joinNetwork: {
                 subtitle: "Réseau d'Experts",
                 title: "Rejoignez Notre Réseau d'Experts Panafricain",
-                p1: "Vous êtes consultant de haut niveau ou expert technique ? Impact Horizon Africa recherche des profils pluridisciplinaires pour des déploiements sur des projets à fort impact à travers le continent.",
-                btn: "Cliquer ici pour rejoindre le réseau"
+                p1: "Vous êtes consultant de haut niveau  ou expert technique ? Impact Horizon Africa recherche des profils pluridisciplinaires pour des déploiements sur des projets à fort impact à travers le continent.",
+                btn: "Cliquez ici pour rejoindre le réseau"
             }
         },
         footer: {
@@ -441,7 +441,7 @@ export const translations = {
                     points: [
                         "Excellence & Précision",
                         "Responsabilité Sociale",
-                        "Assistance Locale",
+                        "Ancrage Local",
                         "Innovation & Éthique"
                     ]
                 }
@@ -476,7 +476,7 @@ export const translations = {
                 },
                 5: {
                     title: "Développement Humain & Capital Social",
-                    desc: "Investir dans les personnes et les communautés pour assurer la durabilité des projets et un impact social à long terme.",
+                    desc: "Investir dans les personnes et les communautés pour assurer la pérennité des projets et un impact social à long terme.",
                     items: ["Développement communautaire", "Renforcement des capacités & Formation", "Transfert de compétences & Appropriation locale"]
                 }
             }
@@ -491,7 +491,7 @@ export const translations = {
                 1: { title: "Diagnostic & Conception", desc: "Cartographie des parties prenantes, diagnostics institutionnels et études de base pour définir la logique d'intervention." },
                 2: { title: "Structuration Stratégique", desc: "Alignement de la conception du projet sur les priorités des donateurs et les cadres institutionnels locaux." },
                 3: { title: "Déploiement Tactique", desc: "Mobilisation rapide de réseaux d'experts et coordination opérationnelle sur le terrain." },
-                4: { title: "Suivi & S&E", desc: "Suivi continu des performances via des systèmes digitaux de S&E et une gestion adaptative factuelle." },
+                4: { title: "Suivi & S&E", desc: "Suivi continu des performances via des systèmes digitaux de S&E et une gestion adaptative basée sur des données probantes." },
                 5: { title: "Preuve d'Impact & Rapports", desc: "Mesure formelle de l'impact, rapports conformes aux exigences des donateurs et capitalisation des résultats." }
             },
             execution: "Précision dans l'exécution.",
@@ -522,8 +522,8 @@ export const translations = {
                 title: "Où nous opérons",
                 items: {
                     1: { name: "Afrique de l'Ouest", focus: "Pôles stratégiques dans les marchés francophones et anglophones, y compris le Sénégal, la Côte d'Ivoire et le Nigeria." },
-                    2: { name: "Afrique Centrale", focus: "Conseil institutionnel et diagnostics sectoriels de haut niveau dans toute la zone CEMAC." },
-                    3: { name: "Afrique de l'Est", focus: "Siège régional au Cameroun, servant de centre d'innovation technologique et de gouvernance." },
+                    2: { name: "Afrique Centrale", focus: "Conseil institutionnel et diagnostics sectoriels de haut niveau dans toute la zone CEMAC, centralisé depuis le Cameroun." },
+                    3: { name: "Afrique de l'Est", focus: "Pôles stratégiques couvrant les corridors de développement est-africains, axés sur l'innovation technologique et la gouvernance." },
                     4: { name: "Afrique Australe", focus: "Infrastructures dédiées, finance verte et services de mesure d'impact alignés sur les donateurs." }
                 }
             },
@@ -599,7 +599,7 @@ export const translations = {
                 country: "Pays",
                 sector: "Secteur d'activité",
                 specialty: "Spécialité",
-                experience: "Nombre d'année d'expérience",
+                experience: "Années d'expérience",
                 cv: "Importer votre CV (PDF, DOCX)",
                 submit: "Soumettre ma candidature"
             }

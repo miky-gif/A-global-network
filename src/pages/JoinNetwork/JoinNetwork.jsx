@@ -6,6 +6,9 @@ import './JoinNetwork.css';
 const JoinNetwork = () => {
     const { t } = useLanguage();
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [fileName, setFileName] = useState('');
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -24,11 +27,10 @@ const JoinNetwork = () => {
         return () => observer.disconnect();
     }, []);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here we would typically handle form submission to a backend
-        setIsSubmitted(true);
-        window.scrollTo(0, 0);
+    // Nous n'utilisons plus e.preventDefault() pour laisser le navigateur 
+    // faire un POST natif, ce qui est obligatoire pour que FormSubmit lise le Fichier.
+    const handleSubmit = () => {
+        setIsSubmitting(true);
     };
 
     if (isSubmitted) {
@@ -94,42 +96,74 @@ const JoinNetwork = () => {
                         <div className="form-card-header">
                             <h3>{t('joinNetworkPage.form.submit').split(' ')[0]} votre candidature</h3>
                         </div>
-                        <form className="join-form shadow-md" onSubmit={handleSubmit}>
+                        <form 
+                            className="join-form shadow-md" 
+                            action="https://formsubmit.co/jojajejujijy@gmail.com" 
+                            method="POST" 
+                            encType="multipart/form-data"
+                            onSubmit={handleSubmit}
+                        >
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_subject" value="Impact Horizon Africa - Nouvelle candidature Expert !" />
+                            <input type="hidden" name="_template" value="table" />
+                            
                             <div className="form-grid">
                                 <div className="form-group full-width">
                                     <label>{t('joinNetworkPage.form.name')}</label>
-                                    <input type="text" placeholder="John Doe" className="form-input" required />
+                                    <input type="text" name="name" placeholder="John Doe" className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.country')}</label>
-                                    <input type="text" placeholder="Cameroun" className="form-input" required />
+                                    <input type="text" name="country" placeholder="Cameroun" className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.sector')}</label>
-                                    <input type="text" placeholder="Ex: Infrastructures, Santé publique" className="form-input" required />
+                                    <input type="text" name="sector" placeholder="Ex: Infrastructures, Santé publique" className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.specialty')}</label>
-                                    <input type="text" placeholder="Ex: Analyse de données, Gestion E&S" className="form-input" required />
+                                    <input type="text" name="specialty" placeholder="Ex: Analyse de données, Gestion E&S" className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.experience')}</label>
-                                    <input type="number" min="0" placeholder="5" className="form-input" required />
+                                    <input type="number" name="experience" min="0" placeholder="5" className="form-input" required />
                                 </div>
                                 <div className="form-group full-width">
                                     <label>{t('joinNetworkPage.form.cv')}</label>
                                     <div className="file-upload-wrapper">
-                                        <input type="file" id="cv-upload" accept=".pdf,.doc,.docx" required />
-                                        <label htmlFor="cv-upload" className="file-upload-label">
-                                            <FaUpload className="upload-icon" /> 
-                                            <span>Cliquez pour parcourir ou glissez votre fichier ici</span>
+                                        <input 
+                                            type="file" 
+                                            name="attachment" 
+                                            id="cv-upload" 
+                                            accept=".pdf,.doc,.docx" 
+                                            required 
+                                            onChange={(e) => {
+                                                if (e.target.files && e.target.files.length > 0) {
+                                                    setFileName(e.target.files[0].name);
+                                                } else {
+                                                    setFileName('');
+                                                }
+                                            }}
+                                        />
+                                        <label htmlFor="cv-upload" className={`file-upload-label ${fileName ? 'has-file' : ''}`}>
+                                            {fileName ? <FaCheckCircle className="upload-icon" style={{color: '#10b981'}} /> : <FaUpload className="upload-icon" />}
+                                            <span style={{ fontWeight: fileName ? 'bold' : 'normal', color: fileName ? '#10b981' : '' }}>
+                                                {fileName ? fileName : "Cliquez pour parcourir ou glissez votre fichier ici"}
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
+                            
+                            {submitError && (
+                                <div className="form-error-message mt-3" style={{color: 'red', textAlign: 'center'}}>
+                                    {submitError}
+                                </div>
+                            )}
+
                             <div className="form-footer mt-4">
-                                <button type="submit" className="btn btn-primary btn-full form-submit-btn">
-                                    {t('joinNetworkPage.form.submit')}
+                                <button type="submit" className="btn btn-primary btn-full form-submit-btn" disabled={isSubmitting}>
+                                    {isSubmitting ? "Envoi en cours..." : t('joinNetworkPage.form.submit')}
                                 </button>
                             </div>
                         </form>
