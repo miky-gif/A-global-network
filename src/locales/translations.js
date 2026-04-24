@@ -11,9 +11,23 @@ export const translations = {
             contactUs: "Contact Us"
         },
         hero: {
-            tagline: "Impact Horizon Africa",
-            title: "A Global Network, <br />Built for Impact.",
-            subtitle: "We operate at the intersection of global standards and local realities, ensuring development projects are effectively delivered and socially anchored.",
+            slides: [
+                {
+                    tagline: "Impact Horizon Africa",
+                    title: "A Global Network, <br />Built for Impact.",
+                    subtitle: "We operate at the intersection of global standards and local realities, ensuring development projects are effectively delivered and socially anchored."
+                },
+                {
+                    tagline: "Strategic Intelligence",
+                    title: "Evidence-Based <br />Development Solutions.",
+                    subtitle: "We bridge the gap between complex donor requirements and local field execution through deep institutional expertise."
+                },
+                {
+                    tagline: "Pan-African Reach",
+                    title: "Local Expertise, <br />International Standards.",
+                    subtitle: "Deploying high-level consultants across 15+ countries to drive sustainable transformation in Africa."
+                }
+            ],
             discover: "Discover Our Impact",
             explore: "Explore Partnership"
         },
@@ -81,7 +95,12 @@ export const translations = {
                 subtitle: "Expert Network",
                 title: "Join Our Pan-African Expert Network",
                 p1: "Are you a top-tier consultant or technical expert? Impact Horizon Africa is looking for multidisciplinary experts to deploy on high-impact projects across the continent.",
-                btn: "Join the Network"
+                btn: "Join the Network",
+                benefits: {
+                    1: "Access to large-scale projects",
+                    2: "Elite Pan-African network",
+                    3: "International collaboration"
+                }
             }
         },
         footer: {
@@ -236,6 +255,8 @@ export const translations = {
                 title: "Founding Team",
                 desc: "A complementary leadership team aligned with the rigorous execution of development projects."
             },
+            readMore: "Read More",
+            readLess: "Show Less",
             members: {
                 leonel: {
                     role: "Co-Founder | Strategic Intelligence",
@@ -248,6 +269,10 @@ export const translations = {
                 jaures: {
                     role: "Co-Founder | Legal & Governance",
                     desc: "Licensed Attorney. Provides high-level legal structuring, regulatory compliance, and multidimensional governance advisory."
+                },
+                joseline: {
+                    role: "Central Africa Manager | Economics & Management",
+                    desc: "PhD holder in Economics and Management, Joseline GUELEU leads project deployment across Central Africa at Impact Horizon Africa. She works on strategic project design, operational coordination and performance monitoring, ensuring alignment with international standards and local realities. She contributes to the delivery of high-impact projects by mobilizing multidisciplinary expertise and ensuring measurable, sustainable results in line with donor and partner requirements."
                 }
             }
         },
@@ -291,13 +316,30 @@ export const translations = {
                 title: "Expert Registration",
                 desc: "Join a high-level network and contribute to sustainable development projects in Africa."
             },
+            info: {
+                title: "Join the consulting elite in Africa",
+                desc: "By joining Impact Horizon Africa, you become part of an exclusive network of professionals dedicated to the continent's transformation. We collaborate with specialized experts to deploy sustainable and institutionally anchored solutions.",
+                features: {
+                    1: { title: "High-level missions", desc: "Access strategic projects funded by major international donors." },
+                    2: { title: "Measurable impact", desc: "Participate in the design and execution of transformative programs on the ground." },
+                    3: { title: "Multidisciplinary network", desc: "Collaborate with over 150 experts spread across all African development corridors." }
+                }
+            },
             form: {
+                submitTitle: "Submit your application",
                 name: "Full Name",
+                namePh: "John Doe",
                 country: "Country",
+                countryPh: "Cameroon",
                 sector: "Sector of Activity",
+                sectorPh: "Ex: Infrastructure, Public Health",
                 specialty: "Specialty",
+                specialtyPh: "Ex: Data Analysis, E&S Management",
                 experience: "Years of Experience",
+                experiencePh: "5",
                 cv: "Upload CV (PDF, DOCX)",
+                cvPlaceholder: "Click to browse or drag your file here",
+                submitting: "Sending...",
                 submit: "Submit Application"
             }
         }
@@ -314,9 +356,23 @@ export const translations = {
             contactUs: "Nous Contacter"
         },
         hero: {
-            tagline: "Impact Horizon Africa",
-            title: "Un Réseau Global, <br />Conçu pour l'Impact.",
-            subtitle: "Nous opérons à l'intersection des standards mondiaux et des réalités locales, garantissant que les projets de développement sont efficacement livrés et socialement ancrés.",
+            slides: [
+                {
+                    tagline: "Impact Horizon Africa",
+                    title: "Un Réseau Global, <br />Conçu pour l'Impact.",
+                    subtitle: "Nous opérons à l'intersection des standards mondiaux et des réalités locales, garantissant que les projets sont efficacement livrés et socialement ancrés."
+                },
+                {
+                    tagline: "Intelligence Stratégique",
+                    title: "Solutions de <br />Développement Factuelles.",
+                    subtitle: "Nous comblons le fossé entre les exigences complexes des donateurs et l'exécution locale sur le terrain."
+                },
+                {
+                    tagline: "Présence Panafricaine",
+                    title: "Expertise Locale, <br />Standards Internationaux.",
+                    subtitle: "Déploiement de consultants de haut niveau dans plus de 15 pays pour stimuler la transformation durable en Afrique."
+                }
+            ],
             discover: "Découvrez Notre Impact",
             explore: "Explorer un Partenariat"
         },
@@ -384,7 +440,12 @@ export const translations = {
                 subtitle: "Réseau d'Experts",
                 title: "Rejoignez Notre Réseau d'Experts Panafricain",
                 p1: "Vous êtes consultant de haut niveau  ou expert technique ? Impact Horizon Africa recherche des profils pluridisciplinaires pour des déploiements sur des projets à fort impact à travers le continent.",
-                btn: "Cliquez ici pour rejoindre le réseau"
+                btn: "Cliquez ici pour rejoindre le réseau",
+                benefits: {
+                    1: "Accès à des projets d'envergure",
+                    2: "Réseau panafricain d'élite",
+                    3: "Collaboration internationale"
+                }
             }
         },
         footer: {
@@ -539,6 +600,8 @@ export const translations = {
                 title: "Équipe Fondatrice",
                 desc: "Une équipe de direction complémentaire alignée sur l'exécution rigoureuse de projets de développement."
             },
+            readMore: "Voir plus",
+            readLess: "Voir moins",
             members: {
                 leonel: {
                     role: "Co-Fondateur | Intelligence Stratégique",
@@ -551,6 +614,10 @@ export const translations = {
                 jaures: {
                     role: "Co-Fondateur | Juridique & Gouvernance",
                     desc: "Avocat agréé. Fournit une structuration juridique de haut niveau, une conformité réglementaire et un conseil multidimensionnel en gouvernance."
+                },
+                joseline: {
+                    role: "Responsable Afrique Centrale | Économie & Gestion",
+                    desc: "Titulaire d'un doctorat en économie et gestion, Joseline GUELEU dirige le déploiement des projets en Afrique centrale chez Impact Horizon Africa. Elle travaille sur la conception stratégique des projets, la coordination opérationnelle et le suivi des performances, garantissant l'alignement avec les normes internationales et les réalités locales. Elle contribue à la réalisation de projets à fort impact en mobilisant une expertise multidisciplinaire et en assurant des résultats mesurables et durables, conformément aux exigences des donateurs et partenaires."
                 }
             }
         },
@@ -594,13 +661,30 @@ export const translations = {
                 title: "Inscription des Experts",
                 desc: "Rejoignez un réseau de haut niveau et contribuez à des projets de développement durable en Afrique."
             },
+            info: {
+                title: "Rejoignez l'élite du conseil en Afrique",
+                desc: "En rejoignant Impact Horizon Africa, vous intégrez un réseau exclusif de professionnels dédiés à la transformation du continent. Nous collaborons avec des experts pointus pour déployer des solutions durables et institutionnellement ancrées.",
+                features: {
+                    1: { title: "Missions de haut niveau", desc: "Accédez à des projets stratégiques financés par les principaux bailleurs internationaux." },
+                    2: { title: "Impact mesurable", desc: "Participez à la conception et l'exécution de programmes transformateurs sur le terrain." },
+                    3: { title: "Réseau pluridisciplinaire", desc: "Collaborez avec plus de 150 experts répartis sur l'ensemble des corridors de développement africains." }
+                }
+            },
             form: {
+                submitTitle: "Soumettez votre candidature",
                 name: "Nom complet",
+                namePh: "Jean Dupont",
                 country: "Pays",
+                countryPh: "Cameroun",
                 sector: "Secteur d'activité",
+                sectorPh: "Ex: Infrastructures, Santé publique",
                 specialty: "Spécialité",
+                specialtyPh: "Ex: Analyse de données, Gestion E&S",
                 experience: "Années d'expérience",
+                experiencePh: "5",
                 cv: "Importer votre CV (PDF, DOCX)",
+                cvPlaceholder: "Cliquez pour parcourir ou glissez votre fichier ici",
+                submitting: "Envoi en cours...",
                 submit: "Soumettre ma candidature"
             }
         }

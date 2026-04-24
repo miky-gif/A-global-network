@@ -62,7 +62,24 @@
 .team-card-info p {
     font-size: 0.95rem;
     line-height: 1.7;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    color: var(--primary-dark);
 }
 
 .member-socials {

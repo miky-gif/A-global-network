@@ -3,6 +3,27 @@ import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../../context/LanguageContext';
 import './Team.css';
 
+const ReadMoreText = ({ text, maxLength = 150 }) => {
+    const [isExpanded, setIsExpanded] = React.useState(false);
+    const { t } = useLanguage();
+
+    if (text.length <= maxLength) {
+        return <p className="text-muted">{text}</p>;
+    }
+
+    return (
+        <p className="text-muted">
+            {isExpanded ? text : `${text.substring(0, maxLength)}...`}
+            <button 
+                onClick={() => setIsExpanded(!isExpanded)} 
+                className="read-more-btn"
+            >
+                {isExpanded ? t('teamPage.readLess') || 'Show Less' : t('teamPage.readMore') || 'Read More'}
+            </button>
+        </p>
+    );
+};
+
 const Team = () => {
     const { t } = useLanguage();
     // Add simple scroll reveal
@@ -56,6 +77,17 @@ const Team = () => {
                 twitter: "https://twitter.com",
                 email: "mailto:jaures@impacthorizon.africa"
             }
+        },
+        {
+            name: "Joseline GUELEU",
+            role: t('teamPage.members.joseline.role'),
+            desc: t('teamPage.members.joseline.desc'),
+            image: "/images/Joseline.jpg", // Placeholder image path
+            socials: {
+                linkedin: "https://linkedin.com",
+                twitter: "https://twitter.com",
+                email: "mailto:joseline@impacthorizon.africa"
+            }
         }
     ];
 
@@ -81,7 +113,7 @@ const Team = () => {
                                 <div className="team-card-info">
                                     <h3>{member.name}</h3>
                                     <span className="member-role">{member.role}</span>
-                                    <p className="text-muted">{member.desc}</p>
+                                    <ReadMoreText text={member.desc} />
 
                                     <div className="member-socials">
                                         <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">

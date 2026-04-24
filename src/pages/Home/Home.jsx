@@ -124,26 +124,6 @@ const Home = () => {
         }
     ];
 
-    const testimonials = [
-        {
-            quote: t('home.testimonials.1.quote'),
-            author: t('home.testimonials.1.author'),
-            role: t('home.testimonials.1.role'),
-            image: "/images/eqp1.jpeg"
-        },
-        {
-            quote: t('home.testimonials.2.quote'),
-            author: t('home.testimonials.2.author'),
-            role: t('home.testimonials.2.role'),
-            image: "/images/eqp2.jpeg"
-        },
-        {
-            quote: t('home.testimonials.3.quote'),
-            author: t('home.testimonials.3.author'),
-            role: t('home.testimonials.3.role'),
-            image: "/images/eqp3.jpeg"
-        }
-    ];
 
     return (
         <div className="home-page">
@@ -255,34 +235,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* TESTIMONIALS */}
-            <section className="testimonials-section section-padding bg-light">
-                <div className="container">
-                    <div className="text-center mb-4 reveal">
-                        <span className="section-subtitle">{t('home.testimonials.subtitle')}</span>
-                        <h2>{t('home.testimonials.title')}</h2>
-                        <p className="text-muted expertise-intro">{t('home.testimonials.intro')}</p>
-                    </div>
-
-                    <div className="testimonials-grid">
-                        {testimonials.map((testi, index) => (
-                            <div key={index} className={`testimonial-card reveal delay-${index + 1}`}>
-                                <div className="quote-mark">"</div>
-                                <p className="testimonial-quote">{testi.quote}</p>
-                                <div className="testimonial-author-box">
-                                    <img src={testi.image} alt={testi.author} className="author-avatar" loading="lazy" />
-                                    <div className="author-details">
-                                        <h4>{testi.author}</h4>
-                                        <p>{testi.role}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <div className="african-divider on-light" aria-hidden="true"></div>
 
             {/* OUR NETWORK SECTION */}
             <section className="home-network-section">
@@ -318,9 +270,9 @@ const Home = () => {
                                 <h2>{t('home.joinNetwork.title')}</h2>
                                 <p className="text-muted">{t('home.joinNetwork.p1')}</p>
                                 <ul className="home-join-benefits">
-                                    <li><FaCheckCircle className="benefit-icon" /> Accès à des projets d'envergure</li>
-                                    <li><FaCheckCircle className="benefit-icon" /> Réseau panafricain d'élite</li>
-                                    <li><FaCheckCircle className="benefit-icon" /> Collaboration internationale</li>
+                                    <li><FaCheckCircle className="benefit-icon" /> {t('home.joinNetwork.benefits.1')}</li>
+                                    <li><FaCheckCircle className="benefit-icon" /> {t('home.joinNetwork.benefits.2')}</li>
+                                    <li><FaCheckCircle className="benefit-icon" /> {t('home.joinNetwork.benefits.3')}</li>
                                 </ul>
                                 <Link to="/join-network" className="btn btn-primary mt-4">
                                     {t('home.joinNetwork.btn')} <FaArrowRight />

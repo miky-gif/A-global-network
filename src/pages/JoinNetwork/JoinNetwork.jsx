@@ -62,31 +62,31 @@ const JoinNetwork = () => {
             <section className="section-padding bg-light">
                 <div className="container form-page-grid reveal">
                     <div className="form-page-info">
-                        <h2>Rejoignez l'élite du conseil en Afrique</h2>
+                        <h2>{t('joinNetworkPage.info.title')}</h2>
                         <p className="text-muted mt-3 mb-4">
-                            En rejoignant Impact Horizon Africa, vous intégrez un réseau exclusif de professionnels dédiés à la transformation du continent. Nous collaborons avec des experts pointus pour déployer des solutions durables et institutionnellement ancrées.
+                            {t('joinNetworkPage.info.desc')}
                         </p>
                         
                         <div className="info-feature-list">
                             <div className="info-feature">
                                 <div className="info-icon"><FaCheckCircle /></div>
                                 <div>
-                                    <h4>Missions de haut niveau</h4>
-                                    <p>Accédez à des projets stratégiques financés par les principaux bailleurs internationaux.</p>
+                                    <h4>{t('joinNetworkPage.info.features.1.title')}</h4>
+                                    <p>{t('joinNetworkPage.info.features.1.desc')}</p>
                                 </div>
                             </div>
                             <div className="info-feature">
                                 <div className="info-icon"><FaCheckCircle /></div>
                                 <div>
-                                    <h4>Impact mesurable</h4>
-                                    <p>Participez à la conception et l'exécution de programmes transformateurs sur le terrain.</p>
+                                    <h4>{t('joinNetworkPage.info.features.2.title')}</h4>
+                                    <p>{t('joinNetworkPage.info.features.2.desc')}</p>
                                 </div>
                             </div>
                             <div className="info-feature">
                                 <div className="info-icon"><FaCheckCircle /></div>
                                 <div>
-                                    <h4>Réseau pluridisciplinaire</h4>
-                                    <p>Collaborez avec plus de 150 experts répartis sur l'ensemble des corridors de développement africains.</p>
+                                    <h4>{t('joinNetworkPage.info.features.3.title')}</h4>
+                                    <p>{t('joinNetworkPage.info.features.3.desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const JoinNetwork = () => {
 
                     <div className="form-container">
                         <div className="form-card-header">
-                            <h3>{t('joinNetworkPage.form.submit').split(' ')[0]} votre candidature</h3>
+                            <h3>{t('joinNetworkPage.form.submitTitle')}</h3>
                         </div>
                         <form 
                             className="join-form shadow-md" 
@@ -110,23 +110,23 @@ const JoinNetwork = () => {
                             <div className="form-grid">
                                 <div className="form-group full-width">
                                     <label>{t('joinNetworkPage.form.name')}</label>
-                                    <input type="text" name="name" placeholder="John Doe" className="form-input" required />
+                                    <input type="text" name="name" placeholder={t('joinNetworkPage.form.namePh')} className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.country')}</label>
-                                    <input type="text" name="country" placeholder="Cameroun" className="form-input" required />
+                                    <input type="text" name="country" placeholder={t('joinNetworkPage.form.countryPh')} className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.sector')}</label>
-                                    <input type="text" name="sector" placeholder="Ex: Infrastructures, Santé publique" className="form-input" required />
+                                    <input type="text" name="sector" placeholder={t('joinNetworkPage.form.sectorPh')} className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.specialty')}</label>
-                                    <input type="text" name="specialty" placeholder="Ex: Analyse de données, Gestion E&S" className="form-input" required />
+                                    <input type="text" name="specialty" placeholder={t('joinNetworkPage.form.specialtyPh')} className="form-input" required />
                                 </div>
                                 <div className="form-group">
                                     <label>{t('joinNetworkPage.form.experience')}</label>
-                                    <input type="number" name="experience" min="0" placeholder="5" className="form-input" required />
+                                    <input type="number" name="experience" min="0" placeholder={t('joinNetworkPage.form.experiencePh')} className="form-input" required />
                                 </div>
                                 <div className="form-group full-width">
                                     <label>{t('joinNetworkPage.form.cv')}</label>
@@ -148,7 +148,7 @@ const JoinNetwork = () => {
                                         <label htmlFor="cv-upload" className={`file-upload-label ${fileName ? 'has-file' : ''}`}>
                                             {fileName ? <FaCheckCircle className="upload-icon" style={{color: '#10b981'}} /> : <FaUpload className="upload-icon" />}
                                             <span style={{ fontWeight: fileName ? 'bold' : 'normal', color: fileName ? '#10b981' : '' }}>
-                                                {fileName ? fileName : "Cliquez pour parcourir ou glissez votre fichier ici"}
+                                                {fileName ? fileName : t('joinNetworkPage.form.cvPlaceholder')}
                                             </span>
                                         </label>
                                     </div>
@@ -163,7 +163,7 @@ const JoinNetwork = () => {
 
                             <div className="form-footer mt-4">
                                 <button type="submit" className="btn btn-primary btn-full form-submit-btn" disabled={isSubmitting}>
-                                    {isSubmitting ? "Envoi en cours..." : t('joinNetworkPage.form.submit')}
+                                    {isSubmitting ? t('joinNetworkPage.form.submitting') : t('joinNetworkPage.form.submit')}
                                 </button>
                             </div>
                         </form>
